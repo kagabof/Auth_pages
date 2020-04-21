@@ -1,0 +1,16 @@
+/**
+  sign up buttons css
+*/
+.sign_up-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.sign-btn{
+    display: inline-block;
+    background-color: rgba(5, 90, 17, 0.692);
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
