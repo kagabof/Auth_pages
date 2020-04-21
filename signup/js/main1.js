@@ -1,23 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log('......hello')
-    document.getElementById("signin-1").style.display = "none";
-    let current = "signup";
-    document.getElementById("signup-1-link").onclick = () => {
-        if (current === "signup") {
+   /**
+    * This happen when the page load at the first time
+    */
+
+    studentBtn = document.getElementById("register-form-teacher");
+    studentBtn.style.display = "none";
+    let current = "student";
+    document.getElementById("student-button").style.opacity = 0.7;
+
+    /**
+     * This function run when a user click on 'As a teacher button'
+     */
+    document.getElementById("teacher-button").onclick = () => {
+        if (current === "student") {
             console.log('.....in')
-            document.getElementById("signup-1").style.display = "none";
-            document.getElementById("signin-1").style.display = "block";
-            current ="signin"
+            document.getElementById("register-form-student").style.display = "none";
+            document.getElementById("register-form-teacher").style.display = "block";
+            document.getElementById("student-button").style.opacity = 1;
+            document.getElementById("teacher-button").style.opacity = 0.7;
+            current ="teacher"
             return;
         }
         return;
     };
 
-    document.getElementById("signin-1-link").onclick = () => {
-        if (current === "signin") {
-            document.getElementById("signin-1").style.display = "none";
-            document.getElementById("signup-1").style.display = "block";
-            current = "signup"
+    /**
+     * This function run when a user click on 'As a student button'
+     */
+    document.getElementById("student-button").onclick = () => {
+        if (current === "teacher") {
+            document.getElementById("register-form-teacher").style.display = "none";
+            document.getElementById("register-form-student").style.display = "block";
+            document.getElementById("teacher-button").style.opacity = 0.7;
+            document.getElementById("student-button").style.opacity = 1;
+            current = "student"
             return;
         }
         return;
